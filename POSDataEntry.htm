@@ -1,0 +1,131 @@
+<html>
+
+<head>
+    <title>Data Entry - ACME Grocers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="stylesheets/dataEntry.css" rel="stylesheet">
+
+    <script type="text/javascript" src="scripts/data_store.js" language="JavaScript"></script>
+    <script type="text/javascript" src="scripts/dataEntry.js" language="JavaScript"></script>
+</head>
+
+<body onload="init();">
+    <div class="container" id="dataEntryPage" name="dataEntryPage">
+        <div class="row" id="navBar" name="navBar">
+            <img src="images/ACME-logo2.png" alt="ACME Logo" title="ACME logo" id="acme_logo" name="acme_logo">
+            <h1>Product Data Entry</h1>
+            <div class="col" id="empDetails" name="empDetails">
+                <label id="empName" name="empName"></label>
+            </div>
+        </div>
+        <div class="row" id="entryBody" name="entryBody">
+            <div class="col" id="entryForm" name="entryForm">
+                <form>
+                    <table id="entryTbl" name="entryTbl" style="width: 100%">
+                        <tr style="height: 15px;">
+                            <th style="width: 10%"></th>
+                            <th style="width: 20%"></th>
+                            <th style="width: 10%"></th>
+                            <th style="width: 20%"></th>
+                            <th style="width: 10%;"></th>
+                        </tr>
+                        <tr style="height: 55px">
+                            <td>
+                                <label>Product ID</label>
+                            </td>
+                            <td>
+                                <select name="ddlProductID" id="ddlProductID">
+                                    <option value="" selected disabled>-- Select Product ID --</option>
+                                </select>
+                            </td>
+                            <td>
+                                <label>Quantity</label>
+                            </td>
+                            <td>
+                                <input type="number" id="productQty" name="productQty" placeholder="Enter Quantity"
+                                    min="1" max="500">
+                            </td>
+                        </tr>
+                        <tr style="height: 55px;">
+                            <td style="text-align: center;" colspan="2">
+                                <label>Unit Price : &emsp13;&emsp13;</label>
+                                <label id="prodPrice" name="prodPrice"><i>-- Select Product --</i></label>
+                            </td>
+                            <td colspan="2">
+                                <input type="button" id="addItemBtn" name="addItemBtn" value="Add Item">
+                                <input type="reset" id="prodReset" name="prodReset">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <br>
+            <br>
+            <div class="row" id="itemTableDiv" name="itemTableDiv">
+                <table id="entryTable" name="entryTable" style="width: 100%;" border="1">
+                    <tr id="tableHead" name="tableHead">
+                        <th style="width: 10%;">Sl.No.</th>
+                        <th style="width: 15%;">Product Code</th>
+                        <th style="width: 30%;">Product Name</th>
+                        <th style="width: 15%;">Unit Price</th>
+                        <th style="width: 10%;">Quantity</th>
+                        <th style="width: 15%;">Value</th>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col" id="totalPriceDiv" name="totalPriceDiv">
+                    <table id="priceTbl" name="priceTbl">
+                        <tr style="height: 0px !important;">
+                            <th style="width: 10%;"></th>
+                            <th style="width: 10%;"></th>
+                        </tr>
+                        <tr>
+                            <td><label>Total Price:</label></td>
+                            <td><label id="totalPriceLabel" name="totalPriceLabel">&#x20B9; 0</label></td>
+                        </tr>
+                        <tr>
+                            <td><label>VAT (15%):</label></td>
+                            <td><label id="totalTaxLabel" name="totalTaxLabel">&#x20B9; 0</label></td>
+                        </tr>
+                        <tr>
+                            <td><label>Delivery Charges:</label></td>
+                            <td><label id="totalDelCharges" name="totalDelCharges">&#x20B9; 0</label></td>
+                        </tr>
+                        <tr>
+                            <td><label>Grand Total:</label></td>
+                            <td><label id="grandTotalLabel" name="grandTotalLabel">&#x20B9; 0</label></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col" id="deliverySubmit" name="deliverySubmit">
+                    <table style="text-align: right; width: 100%;">
+                        <tr style="height: 5px;"></tr>
+                        <tr>
+                            <td>
+                                <label>Delivery Charges: &emsp13;&emsp13;</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="delCharges" name="delCharges">
+                            </td>
+                        </tr>
+                        <tr style="height: 20px;"></tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="button" id="generateBill" name="generateBill" value="Generate Bill">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="footer" name="footer">
+        <label>&copy;Designed by Sandesh Hebbar</label>
+    </div>
+</body>
+
+</html>

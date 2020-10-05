@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Employee Login - ACME Grocers</title>
+    <link rel="stylesheet" href="stylesheets/login_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <script src="scripts/data_store.js" type="text/javascript" language="JavaScript"></script>
+    <script src="scripts/login_script.js" type="text/javascript" language="JavaScript"></script>
+</head>
+
+<body onload="init();">
+    <div class="container" id="loginPage" name="loginPage">
+        <div class="row" id="navBar" name="navBar">
+            <img src="images/ACME-logo1.png" alt="ACME Logo" title="ACME logo" id="acme_logo" name="acme_logo">
+        </div>
+        <div class="row" id="loginBody" name="loginBody">
+            <div class="col" id="emptyPanel" name="emptyPanel">
+            </div>
+            <div class="col" id="loginPanel" name="loginPanel">
+                <form class="form_container" id="login_form" name="login_form">
+                    <div class="container" id="form-head" name="form-head">
+                        <label>Employee Login</label>
+                    </div>
+                    <div id="form-group" name="form-group">
+                        <label>Enter Employee ID</label>
+                        <input type="text" name="inpEmployeeID" id="inpEmployeeID" placeholder="Employee ID" />
+                        <label id="dispErrorEmp"></label>
+                        <label>Password (Case-Sensitive)</label>
+                        <input type="password" name="inpPassword" id="inpPassword" placeholder="Password" />
+                        <label id="dispErrorPass"></label>
+                    </div>
+                    <div id="submitBtn_div" name="submitBtn_div">
+                        <input type="button" id="btnSignIn" name="btnSignIn" value="SIGN IN" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</body>
+
+</html>

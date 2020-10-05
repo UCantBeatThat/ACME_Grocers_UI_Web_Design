@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+div#navBar {
+    background-color: #737575;
+    padding-bottom: 0.5%;
+}
+
+img#acme_logo {
+    float: left;
+    margin: 10px 0;
+    width: 12%;
+    height: auto;
+}
+
+div#empDetails {
+    float: right;
+}
+
+div#empDetails>label {
+    color: #ffffff;
+}
+
+div#entryBody{
+    margin: 3% 7%;
+}
+
+div#entryForm {
+    border: 2px solid #696b6b;
+    border-radius: 10px;
+}
+
+div#navBar>h1 {
+    font-size: 1.8em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-left: 27%;
+    /*text-decoration: underline;*/
+    text-align: center;
+    color: #ffffff;
+}
+
+table#entryTbl {
+    text-align: right;
+}
+
+table#entryTbl input[type=reset], input[type=button] {
+    width: 40%;
+    display: inline-block;
+    padding: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    border: hidden;
+    background-color: #7a1515;
+    color: #ffffff;
+    outline-width: 0;
+}
+
+table#entryTbl input[type=reset]:hover, input[type=button]:hover{
+    border: 1px solid #7a1515;
+    background-color: #ffffff;
+    color: #7a1515;
+}
+
+#ddlProductID,
+#productQty {
+    width: 80%;
+    height: 35px;
+    font-size: 1.05em;
+    border-radius: 3px;
+    border: 0.5px solid #000000;
+    padding: 0 10px;
+}
+
+#ddlProductID:focus,
+#productQty:focus {
+    outline-width: 0;
+    border: 2px solid #47aedd !important;
+}
+
+label.dispError{
+    color: #7a1515;
+}
+
+table#entryTable{
+    text-align: center;
+}
+
+#tableHead th{
+    background-color: #7a1515;
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+div#totalPriceDiv{
+    margin-top: 2%;
+    width: 30%;
+    float: left;
+}
+
+#priceTbl{
+    text-align: right;
+}
+
+table#priceTbl tr{
+    height: 35px;
+}
+
+div#deliverySubmit{
+    margin: 3% 0 0 25% ;
+    display: inline-block;
+}
+
+#generateBill{
+    font-size: 1.3em;
+    padding: 15px;
+    width: 100% !important;
+}
+
+#generateBill:hover{
+    border: 1px solid #7a1515;
+    background-color: #ffffff;
+    color: #7a1515;
+}
+
+div#footer{
+    margin-top: 5%;
+    padding: 2px 0px;
+    background-color: #7a1515;
+    color: #ffffff;
+    text-align: center;
+}
+
+input#delCharges{
+    width: 18px;
+    height: 18px;
+}
