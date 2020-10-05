@@ -1,5 +1,7 @@
 # ACME Grocers POC UI Design
 
+This page has been hosted on https://ucantbeatthat.github.io/ACME_Grocers_UI_Web_Design/ 
+
 ## Pages
 
 ### Login Page Functionalities
@@ -29,3 +31,8 @@
 2. Bill Number does not change if the button is pressed twice, without any changes in the entries in the cart.
 3. If there is any update in the cart (Item Update or Delivery), the bill number is changed.
 4. Bill is generated dynamically from the data in the Data Entry Page.
+
+### Index.html
+
+Redirects the page to EmployeeLogin.htm
+Introduced as a part of requirement for hosting as a Github page.
