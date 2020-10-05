@@ -16,9 +16,9 @@
 6. It is possible to reset the entered values on Reset button press.
 7. On 'Item Add' click, the product details (name, id, price, quantity, line price) are updated in the selected item table.
 8. Validations Provided
-    a. Entries in Product ID and Quantity
-    b. Quantity >= 1 and Quantity <= 500  and Quantity is an integer and not a float
-    c. No more than 5 products can be added to the cart
+    1. Entries in Product ID and Quantity
+    2. Quantity >= 1 and Quantity <= 500  and Quantity is an integer and not a float
+    3. No more than 5 products can be added to the cart
 9. If same product is selected again, the quantity gets cummulated to the existing entry and the prices are re caluclated.
 10. Even though 5 products are already added, we can add quantities to any of the 5 existing products.
 11. Delivery Charges added only if the check box is ticked.
