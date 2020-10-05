@@ -72,7 +72,7 @@ function addItemOnClick() {
         makeInputBorderRed(prodQty);
     }
     else if (prodID.value == "") {
-        alert("Please Select Prodct!");
+        alert("Please Select a Product!");
         makeInputBorderRed(prodID);
     }
     else if (prodQty.value == "") {
