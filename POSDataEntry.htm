@@ -6,6 +6,7 @@
     <link href="stylesheets/dataEntry.css" rel="stylesheet">
 
     <script type="text/javascript" src="scripts/data_store.js" language="JavaScript"></script>
+    <script type="text/javascript" src="scripts/billGenerator.js" language="JavaScript"></script>
     <script type="text/javascript" src="scripts/dataEntry.js" language="JavaScript"></script>
 </head>
 
@@ -14,8 +15,12 @@
         <div class="row" id="navBar" name="navBar">
             <img src="images/ACME-logo2.png" alt="ACME Logo" title="ACME logo" id="acme_logo" name="acme_logo">
             <h1>Product Data Entry</h1>
-            <div class="col" id="empDetails" name="empDetails">
-                <label id="empName" name="empName"></label>
+            <div class="col tooltip" id="empDetails" name="empDetails">
+                <a href="EmployeeLogin.htm">
+                    <img src="images/icon.png" id="empIcon" name="empIcon" alt="Employee Icon" title="EMployee Icon">
+                    <label id="empName" name="empName"></label>
+                    <span class="tooltiptext">Click here to Logout!</span>
+                </a>
             </div>
         </div>
         <div class="row" id="entryBody" name="entryBody">
@@ -47,8 +52,10 @@
                             </td>
                         </tr>
                         <tr style="height: 55px;">
-                            <td style="text-align: center;" colspan="2">
-                                <label>Unit Price : &emsp13;&emsp13;</label>
+                            <td>
+                                <label>Unit Price</label>
+                            </td>
+                            <td style="text-align: center;" >
                                 <label id="prodPrice" name="prodPrice"><i>-- Select Product --</i></label>
                             </td>
                             <td colspan="2">

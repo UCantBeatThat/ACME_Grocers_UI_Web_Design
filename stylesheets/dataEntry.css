@@ -4,7 +4,7 @@ body {
 }
 
 div#navBar {
-    background-color: #737575;
+    background-color: #7a1515;
     padding-bottom: 0.5%;
 }
 
@@ -17,11 +17,45 @@ img#acme_logo {
 
 div#empDetails {
     float: right;
+    cursor: pointer;
 }
 
-div#empDetails>label {
+div#empDetails img{
+    margin: 2px 0;
+    width: 50px;
+    display: block;
+}
+
+label#empName {
     color: #ffffff;
 }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border: hidden;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #ffffff;
+    color: #7a1515;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    border: hiden;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 105%;
+  }
+
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
 
 div#entryBody{
     margin: 3% 7%;
@@ -74,6 +108,7 @@ table#entryTbl input[type=reset]:hover, input[type=button]:hover{
     border-radius: 3px;
     border: 0.5px solid #000000;
     padding: 0 10px;
+    background-color: #ffffff;
 }
 
 #ddlProductID:focus,
@@ -119,6 +154,7 @@ div#deliverySubmit{
     font-size: 1.3em;
     padding: 15px;
     width: 100% !important;
+    border: 1px solid #ffffff;
 }
 
 #generateBill:hover{
@@ -138,4 +174,8 @@ div#footer{
 input#delCharges{
     width: 18px;
     height: 18px;
+}
+
+a{
+    text-decoration: none;
 }

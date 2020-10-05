@@ -4,11 +4,20 @@ var itemCount = 0, totalPrice = 0, totalTax = 0, deliveryCharges = 0, grandTotal
 
 var cartItems = [];
 
+var billNumber, isBillGeneratedOnce = false;
+
+var billDetails = [];
+
+var docString = ``;
+
+var empID;
+
 function init() {
 
     var url_query = new URLSearchParams(window.location.search);
 
-    document.getElementById("empName").innerHTML = url_query.get("EmployeeID");
+    empID = url_query.get("EmployeeID");
+    document.getElementById("empName").innerHTML = empID + "&emsp13;&emsp13;";
 
     var productDDL = document.getElementById("ddlProductID");
     var ddlItemElement, ddlItemText;
@@ -36,6 +45,8 @@ function addEventsToElements() {
     document.getElementById("addItemBtn").addEventListener("click", addItemOnClick);
 
     document.getElementById("delCharges").addEventListener("click", checkDelivery);
+
+    document.getElementById("generateBill").addEventListener("click", generateBill);
 }
 
 function ddlItemUpdate(value) {
@@ -54,8 +65,6 @@ function clearItems() {
 }
 
 function addItemOnClick() {
-
-    console.log(prodID.value + ", " + prodQty.value);
 
     if (prodID.value == "" && prodQty.value == "") {
         alert("Please Select Product and Enter Quantity!");
@@ -79,8 +88,8 @@ function addItemOnClick() {
         prodID.selectedIndex = 0;
         prodQty.value = "";
         clearItems();
+        isBillGeneratedOnce = false;
     }
-
 }
 
 function makeInputBorderRed(element) {
@@ -109,7 +118,7 @@ function enterRecord(id, qty) {
         var unitPrice = parseFloat(itemRow[3].innerHTML);
         itemRow[4].innerHTML = updated_qty;
         lineTotal = Math.round(updated_qty * unitPrice * 100) / 100;
-        
+
         var prevLineTotal = parseFloat(itemRow[5].innerHTML);
         itemRow[5].innerHTML = lineTotal;
 
@@ -165,29 +174,56 @@ function enterRecord(id, qty) {
         }
     }
     totalPrice += lineTotal;
-    totalPrice = (Math.round(totalPrice*100)/100);
+    totalPrice = (Math.round(totalPrice * 100) / 100);
 
     document.getElementById("totalPriceLabel").innerHTML = "&#x20B9; " + totalPrice;
 
     totalTax = Math.round(totalPrice * 0.15 * 100) / 100;
     document.getElementById("totalTaxLabel").innerHTML = "&#x20B9; " + totalTax;
 
-    grandTotal = (Math.round((totalPrice + totalTax)*100)/100) + deliveryCharges;
+    grandTotal = (Math.round((totalPrice + totalTax) * 100) / 100) + deliveryCharges;
     document.getElementById("grandTotalLabel").innerHTML = "&#x20B9; " + grandTotal;
 
 }
 
-function checkDelivery(){
+function checkDelivery() {
     var delivElement = document.getElementById("delCharges");
-    if(delivElement.checked == true){
+    if (delivElement.checked == true) {
         deliveryCharges = 10;
     }
-    else{
+    else {
         deliveryCharges = 0;
     }
 
     document.getElementById("totalDelCharges").innerHTML = "&#x20B9; " + deliveryCharges;
 
-    grandTotal = (Math.round((totalPrice + totalTax)*100)/100) + deliveryCharges;
+    grandTotal = (Math.round((totalPrice + totalTax) * 100) / 100) + deliveryCharges;
     document.getElementById("grandTotalLabel").innerHTML = "&#x20B9; " + grandTotal;
+
+    isBillGeneratedOnce = false;
+}
+
+function generateBill() {
+
+    if (itemCount == 0) {
+        alert("Please add atleast one item to the cart!");
+    }
+    else {
+        if (!isBillGeneratedOnce) {
+
+            var currDate = new Date();
+            billNumber = "ACM_" + currDate.getTime();
+
+            billItemTbl = "<table>" + document.getElementById("entryTable").innerHTML + "</table>";
+
+            billTitle = "Bill No:" + billNumber + " | ACME Grocers"
+
+            docString = html_head1 + billTitle + html_head2 + html_body1 + billNumber + html_body2 + empID + html_body3 + billItemTbl + html_body4 + totalPrice + html_body5 + totalTax + html_body6 + deliveryCharges + html_body7 + grandTotal + html_body8;
+
+            isBillGeneratedOnce = true;
+        }
+
+        var billingWindow = window.open("", "Bill", "width=400, height=600, top=80, left=500");
+        billingWindow.document.write(docString);
+    }
 }
