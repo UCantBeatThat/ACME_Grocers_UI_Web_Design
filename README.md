@@ -2,7 +2,9 @@
 
 This page has been hosted on https://ucantbeatthat.github.io/ACME_Grocers_UI_Web_Design/ 
 
-(PS: Please find the Username and Password in data_store.js)
+You will find the Username and Password in data_store.js.
+
+Please use Sign In page to move to Data Entry Page, as few functionalities depend on the user signing in successfully into the website.
 
 ## Website Functionalities
 
