@@ -2,7 +2,9 @@
 
 This page has been hosted on https://ucantbeatthat.github.io/ACME_Grocers_UI_Web_Design/ 
 
-## Pages
+(PS: Please find the Username and Password in data_store.js)
+
+## Website Functionalities
 
 ### Login Page Functionalities
 1. Customized Login Page for POC Employees

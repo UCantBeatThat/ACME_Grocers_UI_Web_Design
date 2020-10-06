@@ -1,4 +1,4 @@
-var employeeData = [
+const employeeData = [
     { "Employee_ID": "EMP101", "Password": "EMP101"},
     { "Employee_ID": "EMP102", "Password": "EMP101"},
     { "Employee_ID": "EMP103", "Password": "EMP101"},
@@ -15,7 +15,7 @@ var employeeData = [
     { "Employee_ID": "EMP114", "Password": "EMP101"}
 ];
 
-var productDetails = [
+const productDetails = [
 {
     "id": "PROD0001",
     "title": "Brown eggs",
