@@ -1,5 +1,8 @@
 function init(){
     document.getElementById("btnSignIn").addEventListener("click", signIn_btnClick);
+
+    document.getElementById("inpEmployeeID").addEventListener("keyup", checkEnterPress);
+    document.getElementById("inpPassword").addEventListener("keyup", checkEnterPress);
 }
 
 function signIn_btnClick(){
@@ -44,4 +47,10 @@ function processSignIn(empID, empPass){
 
 function takeMeInside(empID){
     window.location.href = "POSDataEntry.htm?EmployeeID=" + empID.toUpperCase();
+}
+
+function checkEnterPress(event){
+    if(event.keyCode == 13){
+        signIn_btnClick();
+    }
 }
